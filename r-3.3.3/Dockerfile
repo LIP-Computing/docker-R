@@ -113,13 +113,12 @@ RUN apt-get update \
   && echo MRAN=$MRAN >> /etc/environment \
   && export MRAN=$MRAN \
   && echo "options(repos = c(CRAN='$MRAN'), download.file.method = 'libcurl')" >> /usr/local/lib/R/etc/Rprofile.site \
-  ## Use littler installation scripts
   && Rscript -e "install.packages(c('littler', 'docopt'), repo = '$MRAN')" \
   && ln -s /usr/local/lib/R/site-library/littler/examples/install2.r /usr/local/bin/install2.r \
   && ln -s /usr/local/lib/R/site-library/littler/examples/installGithub.r /usr/local/bin/installGithub.r \
   && ln -s /usr/local/lib/R/site-library/littler/bin/r /usr/local/bin/r \
   && cd / \
-  && R CMD javareconf
+  && R CMD javareconf \
   && rm -rf /tmp/* \
   && apt-get autoremove -y \
   && apt-get autoclean -y \
