@@ -1,4 +1,4 @@
-
+# docker build --rm -t r-3.3.3 .
 FROM ubuntu:16.04
 
 LABEL org.label-schema.license="GPL-2.0" \
@@ -22,10 +22,12 @@ RUN apt-get update \
     ca-certificates \
     file \
     fonts-texgyre \
+    freeglut3-dev \
     g++ \
     gfortran \
     git \
     gsfonts \
+    less \
     libbz2-1.0 \
     libcurl3 \
     libicu55 \
@@ -46,11 +48,16 @@ RUN apt-get update \
     libbz2-dev \
     libcairo2-dev \
     libcurl4-openssl-dev \
-    libpango1.0-dev \
+    libgdal-dev \
+    libglu1-mesa-dev \
+    libgmp-dev \
     libjpeg-dev \
     libicu-dev \
+    libmpfr-dev \
+    libpango1.0-dev \
     libpcre3-dev \
     libpng-dev \
+    libproj-dev \
     libreadline-dev \
     libssl-dev \
     libtiff5-dev \
@@ -58,6 +65,7 @@ RUN apt-get update \
     libx11-dev \
     libxml2-dev \
     libxt-dev \
+    mesa-common-dev \
     openjdk-8-jdk \
     openjdk-8-jdk-headless \
     perl \
